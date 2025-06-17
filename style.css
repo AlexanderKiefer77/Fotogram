@@ -27,7 +27,8 @@ body {
     max-width: var(--maxWidth);
     width: 100%;
     margin: auto;
-    padding-left: 24px ;
+    padding-left: 24px;
+    padding-right: 24px;
    /* z-index: 1;*/
 }
 
@@ -47,6 +48,7 @@ header img {
 
 .aot {
     width: 100%;
+    background-color: khaki;
     /*background-image: url(./assets/img/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -55,21 +57,31 @@ header img {
 
 main {
     min-height: calc(100vh - 200px);
-    /*200px=100px Header und 100px Footer */
-    background-color: khaki;
+    /*200px=100px Header und 100px Footer */   
 }
 
 .headline {
     text-align: center;
-    padding-top: 60px;
-    padding-bottom: 60px;
-
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 .pictureplace {
-    /*background-color: blanchedalmond;*/
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 32px;
+    padding-bottom: 32px;
+}
+
+.picture {
+    /*max-width: 300px;  
+    width: 100%;*/
+    width: 180px;
+    height: 180px;  
+    object-fit: fill;
+    border-radius: 20px;   
 }
 
 footer {
