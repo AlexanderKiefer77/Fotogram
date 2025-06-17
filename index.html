@@ -1,0 +1,58 @@
+<!-- Contentbreite definiertund Mittig zentriert. 
+     In dieser Variante ist die Mittenzentrierung über margin: auto gesteurt.
+     Für grafische Zwecke hat der header, main und footer volle Bildschirmbreite. 
+     Contentbreite einstellbar durch Variable,
+     definiert über class .contentWidth {
+                             box-sizing: border-box;
+                             max-width: var(--maxWidth);
+                             width: 100%;
+                             margin: auto;
+     Für Footer am Boden zu halten, Header und Footer eine feste Höhe 
+     definieren, und dazwischen ein main-div mit folgender Höhenberechnung:
+       min-height: calc(100vh - 200px); /*200px=100px Header und 100px Footer*/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotogram</title>
+    <link rel="icon" href="./assets/favicon.svg" sizes="any" type="image/svg+xml">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="./script.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="contentWidth">
+            <img src="./assets/Fotogram_Logo.svg" alt="Fotogram with Logo">
+        </div>
+    </header>
+
+    <div class="aot">
+            <main class="contentWidth">
+                <section>
+                    <div class="headline">
+                        <h1>Meine Fotos aus Bregenz 2025</h1>
+                    </div>
+                </section>
+                <section>
+                    <div id="pictureField" class="pictureplace">fgdg
+                    </div>
+                </section>
+            </main>
+    </div>
+
+    <footer>
+        <div class="contentWidth">
+            <h1>footer</h1>
+        </div>
+    </footer>
+
+</body>
+
+</html>
