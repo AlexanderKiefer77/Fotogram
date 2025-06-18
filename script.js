@@ -19,23 +19,29 @@ let currentPictures = []; // muss definiert sein, sonst wird es in der function 
 function render() {
     let pictureRef = document.getElementById('pictureField');
     pictureRef.innerHTML = ''; // leert den Inhalt des div´s
-    currentPictures = picturesArray;
-
-    for (let index = 0; index < currentPictures.length; index++) {
-        pictureRef.innerHTML += pictureRendering(index, currentPictures);
+    
+    for (let index = 0; index < picturesArray.length; index++) {
+        pictureRef.innerHTML += pictureRendering(index);
     }
 }
 
 
 function pictureRendering(index) {
     return `<div>             
-                <img src="./assets/img/${currentPictures[index]}" onclick="message()" class="picture">                                               
+                <img src="./assets/img/${picturesArray[index]}" alt="Bilder aus Bregenz" onclick="toggleOverlay(${index})" class="picture">                                               
             </div> `
 }
 
+onclick="toggleOverlay()"
 
+function toggleOverlay(index) {
+    let overlayRef = document.getElementById('overlay'); // Variable dafür erstellt
 
-function message() {
-    console.log("Och Nöö");
+    overlayRef.classList.toggle('d_none'); // class wird in div eingefügt
+
+   overlayRef.innerHTML = `<div class="innerOverlay">
+                                <img src="./assets/img/${picturesArray[index]}" class="pictureInOverlay">
+                           </div>`
+                           
 }
 
