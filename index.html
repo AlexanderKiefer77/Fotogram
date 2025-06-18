@@ -1,17 +1,3 @@
-<!-- Contentbreite definiertund Mittig zentriert. 
-     In dieser Variante ist die Mittenzentrierung über margin: auto gesteurt.
-     Für grafische Zwecke hat der header, main und footer volle Bildschirmbreite. 
-     Contentbreite einstellbar durch Variable,
-     definiert über class .contentWidth {
-                             box-sizing: border-box;
-                             max-width: var(--maxWidth);
-                             width: 100%;
-                             margin: auto;
-     Für Footer am Boden zu halten, Header und Footer eine feste Höhe 
-     definieren, und dazwischen ein main-div mit folgender Höhenberechnung:
-       min-height: calc(100vh - 200px); /*200px=100px Header und 100px Footer*/
--->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,13 +7,11 @@
     <title>Fotogram</title>
     <link rel="icon" href="./assets/favicon.svg" sizes="any" type="image/svg+xml">
     <link rel="stylesheet" type="text/css" href="./style.css">
-
-
 </head>
 
 <body onload="render()">
 
-    <header>
+    <header class="header">
         <div class="contentWidth">
             <img src="./assets/Fotogram_Logo.svg" alt="Fotogram with Logo">
         </div>
