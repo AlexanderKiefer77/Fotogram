@@ -163,22 +163,29 @@ footer img {
     max-width: 1440px;
     width: 100%;
     height: auto;
-    background-color: rgba(11, 87, 102, 0.8);
+    /*background-color: rgba(11, 87, 102, 0.8);*/
     color: crimson;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
     font-size: 24px;
     border-radius: 32px;
 }
 
 .pictureInOverlay {
-    max-width: 980px;
+    max-width: 1280px;
     height: auto;
     border-radius: 24px;
-    margin-top: 10px;
-    margin-bottom: 64px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.484);
+    /*margin-top: 10px;
+    margin-bottom: 64px;*/
 }
+
+.arrow { 
+    width: 60px;
+    cursor: pointer;
+   }
 
 
 @media(max-width: 560px) {

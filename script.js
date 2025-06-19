@@ -19,29 +19,40 @@ let currentPictures = []; // muss definiert sein, sonst wird es in der function 
 function render() {
     let pictureRef = document.getElementById('pictureField');
     pictureRef.innerHTML = ''; // leert den Inhalt des div´s
-    
+
     for (let index = 0; index < picturesArray.length; index++) {
         pictureRef.innerHTML += pictureRendering(index);
     }
+    
 }
 
 
-function pictureRendering(index) {
+function pictureRendering(index) { // erstellt die kleinen Bilder
+    
     return `<div>             
                 <img src="./assets/img/${picturesArray[index]}" alt="Bilder aus Bregenz" onclick="toggleOverlay(${index})" class="picture">                                               
             </div> `
 }
 
-onclick="toggleOverlay()"
-
-function toggleOverlay(index) {
+function toggleOverlay(index) { // erstellt das große Bild beim anklicken eines kleinen Bildes
     let overlayRef = document.getElementById('overlay'); // Variable dafür erstellt
 
     overlayRef.classList.toggle('d_none'); // class wird in div eingefügt
 
-   overlayRef.innerHTML = `<div class="innerOverlay">
+    overlayRef.innerHTML = `<div class="innerOverlay">
+                                <img src="./assets/back.png" alt="Pfeil nach Links" onclick="pictureBackwards()" class="arrow">
                                 <img src="./assets/img/${picturesArray[index]}" class="pictureInOverlay">
-                           </div>`
-                           
+                                <img src="./assets/forward.png" alt="Pfeil nach Links" onclick="pictureForwards(${[index]})" class="arrow">
+                          </div>`
+
 }
 
+function pictureBackwards(index) {
+    console.log(picturesArray[index]);
+    
+}
+
+function pictureForwards(index) {
+    console.log("Bild forwärts" + [index]);
+    
+}
