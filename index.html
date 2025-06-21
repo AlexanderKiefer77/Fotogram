@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -10,32 +10,23 @@
 </head>
 
 <body onload="render()"> <!--toggleOverlay(), -->
-
+ 
     <header class="header">
         <div class="contentWidth">
-            <img src="./assets/Fotogram_Logo.svg" alt="Fotogram with Logo">
+            <img src="./assets/Fotogram_Logo.svg" alt="Fotogram Logo">
         </div>
     </header>
 
-    <div class="aot">
-
-        <main class="contentWidth">
-            <div id="overlay">
+<div id="overlay">
+    <main class="aot">
+        <div class="contentWidth"> <!-- nur für content breite -->
+           
             <!--<div onclick="toggleOverlay()" id="overlay" class="overlayClass"></div> -->
-            <section>
-                <div class="headline">
-                    <h1>Meine Fotos aus Bregenz 2025</h1>
-                </div>
-            </section>
-            <section>
-
-                <div id="pictureField" class="pictureplace">
-
-                </div>
-            </section>
+            <div id="pictureField" class="pictureplace"></div>
+            
+        </div>
+    </main>
 </div>
-        </main>
-    </div>
 
     <footer>
         <div class="contentWidth">
