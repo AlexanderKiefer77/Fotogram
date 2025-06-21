@@ -163,7 +163,7 @@ footer img {
     max-width: 1440px;
     width: 100%;
     height: auto;
-    /*background-color: rgba(11, 87, 102, 0.8);*/
+    background-color: rgba(11, 87, 102, 0.8);
     color: crimson;
     display: flex;
     justify-content: space-evenly;
@@ -173,7 +173,7 @@ footer img {
 }
 
 .pictureInOverlay {
-    max-width: 1280px;
+    max-width: 1000px;
     height: auto;
     border-radius: 24px;
     border-style: solid;
