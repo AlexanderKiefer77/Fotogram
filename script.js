@@ -19,24 +19,23 @@ let commentsPictures = [
     "Ausblick vom Pfänder Richtung Schweiz",
     "Ausblick vom Pfänder zum Bodensee",
     "Ausblick vom Pfänder zum Bodensee",
-    "Ausblick vom Pfänder zum Bodensee",
-    "Ausblick vom Pfänder zum Bodensee",
+    "Ausblick vom Pfänder zum Bodensee Richtung Lindau",
+    "Ausblick vom Pfänder zum Bodensee Richtung Lindau",
     "Bregenz Hafen - MS Sonnenkönigin",
     "Bregenz Hafeneinfahrt",
     "Ausblick Hafen Richtung Lindau",
-    "Ausblick Hafen Richtung Lindau Nordseite",
-    "Bregenz Hafen - MS Sonnenkönigin",
-    "Ausblick Hafen Richtung Lindau Südseite"
+    "Ausblick Hafen Richtung Bregenz Nordseite",
+    "Bregenz Hafen - Blick von Promenade zum Hafen",
+    "Ausblick Hafen Richtung Bregenz Südseite"
 ]
 
 let currentPictures = []; // muss definiert sein, sonst wird es in der function zu Fehler führen
 let currentComments = [];
 
 
-function render() {
+function render() { // wird mit body onload gestartet, fügt die Überschrift hinzu und erstellt 
+                    // die kleinen Fotos in Verbindung mit der Funktion "pictureRendering"
     let pictureRef = document.getElementById('pictureField');
-    //console.log(pictureRef);    
-    //pictureRef.innerHTML = ''; // leert den Inhalt des div´s
     pictureRef.innerHTML = `<div class="headline">
                                 <h1>Meine Fotos aus Bregenz 2025</h1>
                             </div>`
@@ -47,44 +46,46 @@ function render() {
 
 function pictureRendering(index) { // erstellt die kleinen Bilder    //
     return `<div>             
-                <img src="./assets/img/${pictures[index]}" alt="Verschiedene Bilder aus Bregenz, vom Pfänder und vom Hafen" onclick="toggleOverlay(${index})" class="picture">                                               
+                <img src="./assets/img/${pictures[index]}" alt="Verschiedene Bilder aus Bregenz, vom Pfänder und vom Hafen" onclick="openOverlay(${index})" class="picture">                                               
             </div>`
 }
 
- let overlayRef = document.getElementById('overlay'); // Variable dafür erstellt
-function toggleOverlay(index) { // erstellt das große Bild beim anklicken eines kleinen Bildes
-   
-   // let overlayRefTwo = document.getElementById('pictureField');
-    overlayRef.classList.toggle('overlayClass'); // class wird in div eingefügt
-    //
 
+let overlayRef = document.getElementById('overlay');
+let displayAOT = document.getElementById('aot');
 
+function openOverlay(index) { // erstellt den Inhalt des Overlay Bildes
     overlayRef.innerHTML = `<div class="innerOverlay">
                                 <img src="./assets/back.png" alt="Pfeil nach Links" onclick="pictureBackwards()" class="arrow">
                                 <figure>
-                                    <img src="./assets/img/${pictures[index]}" alt="Foto ${commentsPictures[index]}" onclick="toggleOverlay()" class="pictureInOverlay">
+                                    <img src="./assets/img/${pictures[index]}" alt="Foto ${commentsPictures[index]}" onclick="closeOverlay()" class="pictureInOverlay">
                                     <h3>${commentsPictures[index]}<h3>
                                 </figure>
                                 <img src="./assets/forward.png" alt="Pfeil nach Links" onclick="pictureForwards(${[index]})" class="arrow">
                           </div>`;
-
-   
+    toggleOverlay(); // startet die toggle function
+    
+  displayAOT.classList.add("d_none"); // fügt dem AOT die class d_none hinzu, damit wird der Inhalt des AOT ausgeblendet
 }
 
-function closePicture() {
-    console.log("Bild schliessen");
-    //location.reload(); // funktioniert, aber langsam
-
+function toggleOverlay() {   
+    overlayRef.classList.toggle('overlayClass');  
 }
+
+
+function closeOverlay() { // function für Overlay zu schliessen
+    overlayRef.innerHTML = ''; // leert den Inhalt des Overlay
+    toggleOverlay(); // startet die toggle function
+    displayAOT.classList.remove("d_none"); // entfernt dem AOT wieder die class d_none, damit wird der Inhalt des AOT wieder eingeblendet
+}
+
 
 function pictureBackwards(index) {
-    console.log(pictures[index]);
-
+    console.log("Bild zurück");
 }
 
 function pictureForwards(index) {
     console.log("Bild forwärts" + [index]);
-
 }
 
 

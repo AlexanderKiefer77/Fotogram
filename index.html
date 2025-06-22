@@ -9,24 +9,20 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 
-<body onload="render()"> <!--toggleOverlay(), -->
- 
+<body onload="render()"> 
+    
     <header class="header">
         <div class="contentWidth">
             <img src="./assets/Fotogram_Logo.svg" alt="Fotogram Logo">
         </div>
     </header>
 
-<div id="overlay">
-    <main class="aot">
+ <div id="overlay"></div>
+    <main id="aot" class="aot">
         <div class="contentWidth"> <!-- nur für content breite -->
-           
-            <!--<div onclick="toggleOverlay()" id="overlay" class="overlayClass"></div> -->
-            <div id="pictureField" class="pictureplace"></div>
-            
+            <div id="pictureField" class="pictureplace"></div>            
         </div>
     </main>
-</div>
 
     <footer>
         <div class="contentWidth">
