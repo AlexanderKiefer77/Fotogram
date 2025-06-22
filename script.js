@@ -55,14 +55,16 @@ let overlayRef = document.getElementById('overlay');
 let displayAOT = document.getElementById('aot');
 
 function openOverlay(index) { // erstellt den Inhalt des Overlay Bildes
-    overlayRef.innerHTML = `<div class="innerOverlay">
-                                <img src="./assets/back.png" alt="Pfeil nach Links" onclick="pictureBackwards()" class="arrow">
-                                <figure>
+    overlayRef.innerHTML = `<div class="innerOverlay">                               
+                                
                                     <img src="./assets/img/${pictures[index]}" alt="Foto ${commentsPictures[index]}" onclick="closeOverlay()" class="pictureInOverlay">
-                                    <h3>${commentsPictures[index]}<h3>
-                                </figure>
-                                <img src="./assets/forward.png" alt="Pfeil nach Links" onclick="pictureForwards(${[index]})" class="arrow">
-                          </div>`;
+                                    <div class="navigate">
+                                        <img src="./assets/back.png" alt="Pfeil nach Links" onclick="pictureBackwards()" class="arrow">
+                                        <h2>${commentsPictures[index]}</h2>
+                                        <img src="./assets/forward.png" alt="Pfeil nach Links" onclick="pictureForwards(${[index]})" class="arrow">
+                                    </div>
+                                                                                            
+                            </div>`;
     toggleOverlay(); // startet die toggle function
     
   displayAOT.classList.add("d_none"); // fügt dem AOT die class d_none hinzu, damit wird der Inhalt des AOT ausgeblendet
