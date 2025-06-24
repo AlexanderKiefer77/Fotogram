@@ -68,7 +68,7 @@ function overlayPictureRendering(index) {
                                     </div>
                                 </figure>                                                            
                             </div>`;
-};
+}
 
 function toggleOverlay() {
     overlayRef.classList.toggle('overlayClass');
@@ -80,12 +80,22 @@ function closeOverlay() { // function für Overlay zu schliessen
     displayAOT.classList.remove("d_none"); // entfernt dem AOT wieder die class d_none, damit wird der Inhalt des AOT wieder eingeblendet
 }
 
-function prevPicture(index) {
-    index = index - 1;
-    overlayPictureRendering(index);
+function prevPicture(index) {    
+    if (index > 0) {
+        index = index - 1;
+        overlayPictureRendering(index);
+    } else if (index == 0) {
+        index = pictures.length - 1;
+        overlayPictureRendering(index);
+    }   
 }
 
 function nextPicture(index) {
-    index = index + 1;
-    overlayPictureRendering(index);
+    if (index < pictures.length - 1) {
+        index = index + 1;
+        overlayPictureRendering(index);
+    } else if (index = pictures.length) {
+        index = 0;
+        overlayPictureRendering(index);
+    } 
 }
