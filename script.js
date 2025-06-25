@@ -33,7 +33,7 @@ let overlayRef = document.getElementById('overlay');
 let displayAOT = document.getElementById('aot');
 
 function render() { // wird mit body onload gestartet, fügt die Überschrift hinzu und erstellt 
-    // die kleinen Fotos in Verbindung mit der Funktion "pictureRendering"
+                    // die kleinen Fotos in Verbindung mit der Funktion "pictureRendering"
     let pictureRef = document.getElementById('pictureField');
     pictureRef.innerHTML = `<div class="headline">
                                 <h1>Meine Fotos aus Bregenz 2025</h1>
@@ -45,7 +45,7 @@ function render() { // wird mit body onload gestartet, fügt die Überschrift hi
 
 function pictureRendering(index) { // erstellt die kleinen Bilder    //
     return `<div>             
-                <img src="./assets/img/${pictures[index]}" alt="Verschiedene Bilder aus Bregenz, vom Pfänder und vom Hafen" onclick="openOverlay(${index})" class="picture">                                               
+                <img src="./assets/img/${pictures[index]}" alt="kleines Foto ${commentsPictures[index]}" onclick="openOverlay(${index})" class="picture">                                               
             </div>`
 }
 
@@ -56,7 +56,8 @@ function openOverlay(index) { // erstellt den Inhalt des Overlay Bildes
 }
 
 function overlayPictureRendering(index) {
-    overlayRef.innerHTML = `<div class="innerOverlay">                               
+    overlayRef.innerHTML = `<div class="innerOverlay">  
+                                <p>zum schliessen auf das Bild klicken</p>                             
                                 <figure>
                                     <img src="./assets/img/${pictures[index]}" alt="Foto ${commentsPictures[index]}" onclick="closeOverlay()" class="pictureInOverlay">
                                     <div class="navigate">
@@ -80,22 +81,22 @@ function closeOverlay() { // function für Overlay zu schliessen
     displayAOT.classList.remove("d_none"); // entfernt dem AOT wieder die class d_none, damit wird der Inhalt des AOT wieder eingeblendet
 }
 
-function prevPicture(index) {    
+function prevPicture(index) { // function für großes Bild zurück zu ändern
     if (index > 0) {
         index = index - 1;
         overlayPictureRendering(index);
     } else if (index == 0) {
         index = pictures.length - 1;
         overlayPictureRendering(index);
-    }   
+    }
 }
 
-function nextPicture(index) {
+function nextPicture(index) { // function für großes Bild vorwärts zu ändern
     if (index < pictures.length - 1) {
         index = index + 1;
         overlayPictureRendering(index);
     } else if (index = pictures.length) {
         index = 0;
         overlayPictureRendering(index);
-    } 
+    }
 }

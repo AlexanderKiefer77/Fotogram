@@ -3,10 +3,11 @@
     --maxWidth: 1440px;
 
     /* Variablen für Farben */
-    --backgroundColorHeaderFooter: #1232a6;
-    --backgroundColorAOT: rgb(201, 190, 89);
+    --backgroundColorHeaderFooter: #010f3f;
+    --backgroundColorAOT: rgb(9, 49, 67);
     --borderColorHeaderFooter: rgba(255, 0, 0, 0.477);
-    --backgroundColorOverlay: lightsteelblue;
+    --backgroundColorOverlay: rgb(9, 49, 67);
+    ;
 }
 
 * {
@@ -15,11 +16,19 @@
     padding: 0;
 }
 
+h1 {
+    color: rgb(0, 0, 58);
+}
+
 h2 {
     text-align: center;
     color: black;
     padding-left: 24px;
     padding-right: 24px;
+}
+
+b {
+    font-size: 24px;
 }
 
 html {
@@ -85,6 +94,9 @@ main {
     height: 180px;
     object-fit: cover;
     border-radius: 20px;
+    display: flex; /* alt-Text Umbruch */
+    overflow-wrap: break-word; /* alt-Text Umbruch */
+    word-wrap: break-word; /* alt-Text Umbruch */
 }
 
 .picture:hover {
@@ -104,8 +116,6 @@ footer {
 .footerRemark {
     color: white;
     font-size: 16px;
-    padding-left: 40px;
-    padding-right: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -126,7 +136,7 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;    
+    height: 100vh;
     background-color: var(--backgroundColorOverlay);
 }
 
@@ -137,8 +147,6 @@ footer {
 .innerOverlay {
     max-width: var(--maxWidth);
     width: 100%;
-    /*max-height: 100vh;
-    /*height: auto; /**/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -150,15 +158,18 @@ footer {
     padding-right: 16px;
 }
 
-.pictureInOverlay {
+.pictureInOverlay { /*großes Foto */
     max-width: 1000px;
     width: 100%;
-   /* max-height: 100vh; /**/
     max-height: auto;
     border-radius: 24px;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.484);
     cursor: pointer;
+}
+
+.pictureInOverlay:hover {
+    border-color: darkred;
 }
 
 .navigate {
@@ -177,6 +188,11 @@ footer {
     cursor: pointer;
 }
 
+.arrow:hover {
+    width: 58px;
+}
+
+/* ######################################################### */
 /* Diese Klassen werden nur in der Impressum Seite verwendet */
 
 .contentWidthImpressum {
@@ -198,6 +214,8 @@ footer {
 footer img {
     height: 72px;
 }
+
+/* ######################################################### */
 
 
 @media(max-width: 560px) {
@@ -234,6 +252,10 @@ footer img {
     .arrow {
         width: 40px;
     }
+
+    footer {
+        height: 120px;
+    }
 }
 
 @media(max-width: 430px) {
@@ -250,5 +272,12 @@ footer img {
 
     .arrow {
         width: 32px;
+    }
+
+    .footerRemark {
+        text-align: center;
+        font-size: 16px;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 }
