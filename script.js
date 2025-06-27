@@ -46,7 +46,7 @@ function render() { // starts with body onload, adds the heading and render
 
 function pictureRendering(index) { // render small pictures  //
     return `<div>             
-                <img src="./assets/img/${pictures[index]}" alt="kleines Foto ${commentsPictures[index]}" onclick="openOverlay(${index})" class="picture">                                               
+                <img src="./img/${pictures[index]}" alt="kleines Foto ${commentsPictures[index]}" onclick="openOverlay(${index})" class="picture">                                               
             </div>`
 }
 
@@ -62,7 +62,7 @@ function overlayPictureRendering(index) {
     overlayRef.innerHTML = `<div class="innerOverlay">  
                                 <p>zum schliessen auf das Bild klicken</p>                             
                                 <figure>
-                                    <img src="./assets/img/${pictures[index]}" alt="Foto ${commentsPictures[index]}" onclick="closeOverlay()" class="pictureInOverlay">
+                                    <img src="./img/${pictures[index]}" alt="Foto ${commentsPictures[index]}" onclick="closeOverlay()" class="pictureInOverlay">
                                     <div class="navigate">
                                         <img src="./assets/back.png" alt="Pfeil Bild zurück" onclick="prevPicture(${index})" class="arrow">
                                         <figcaption>

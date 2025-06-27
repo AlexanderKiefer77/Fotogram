@@ -123,6 +123,11 @@ header img {
     color: white;
 }
 
+.footerRemark a:hover {
+    text-decoration: underline;
+    color: darkred;
+}
+
 /* Klassen für Overlay */
 
 .overlayClass { /* position overlay */
