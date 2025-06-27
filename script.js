@@ -1,17 +1,21 @@
 
 let pictures = [
-    "pictureOne.jpg",
-    "pictureTwo.jpg",
-    "pictureThree.jpg",
-    "pictureFour.jpg",
-    "pictureFive.jpg",
-    "pictureSix.jpg",
-    "pictureSeven.jpg",
-    "pictureEight.jpg",
-    "pictureNine.jpg",
-    "pictureTen.jpg",
-    "pictureEleven.jpg",
-    "pictureTwelve.jpg"
+    "photo1.jpg",
+    "photo2.jpg",
+    "photo3.jpg",
+    "photo4.jpg",
+    "photo5.jpg",
+    "photo6.jpg",
+    "photo7.jpg",
+    "photo8.jpg",
+    "photo9.jpg",
+    "photo10.jpg",
+    "photo11.jpg",
+    "photo12.jpg",
+    "photo13.jpg",
+    "photo14.jpg",
+    "photo15.jpg",
+    "photo16.jpg"
 ]
 
 let commentsPictures = [
@@ -26,7 +30,11 @@ let commentsPictures = [
     "Ausblick Hafen Richtung Lindau",
     "Ausblick Hafen Bregenz Nordseite",
     "Bregenz Blick von Promenade zum Hafen",
-    "Ausblick Hafen Richtung Bregenz Südseite"
+    "Ausblick Hafen Richtung Bregenz Südseite",
+    "Ausblick vom Pfänder auf Bregenz",
+    "Ausblick vom Pfänder Richtung Österreich",
+    "Ausblick in den Hafen",
+    "Ausblick Hafen Bregenz"
 ]
 
 let overlayRef = document.getElementById('overlay');
