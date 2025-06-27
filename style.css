@@ -1,8 +1,8 @@
 :root {
-    /* Variable für Breite für Content Begrenzung */
+    /* Variable for max. Content width  */
     --maxWidth: 1440px;
 
-    /* Variablen für Farben */
+    /* Variablen for colors */
     --backgroundColorHeaderFooter: #010f3f;
     --backgroundColorAOT: rgb(9, 49, 67);
     --borderColorHeaderFooter: rgba(255, 0, 0, 0.477);
@@ -25,10 +25,13 @@ h2 {
     color: black;
     padding-left: 24px;
     padding-right: 24px;
+    font-size: 24px;
+    overflow-wrap: break-word; /* alt-Text wrapping */
+    word-wrap: break-word; /* alt-Text wrapping */
 }
 
 b {
-    font-size: 24px;
+    font-size: 16px;
 }
 
 html {
@@ -63,20 +66,14 @@ header img {
 }
 
 .aot {
+    min-height: calc(100vh - 200px); /*200px=100px Header and 100px Footer */
     width: 100%;
     background-color: var(--backgroundColorAOT);
-}
-
-main {
-    min-height: calc(100vh - 200px);
-    /*200px=100px Header und 100px Footer */
 }
 
 .headline {
     width: 100%;
     text-align: center;
-    padding-top: 24px;
-    padding-bottom: 24px;
 }
 
 .pictureplace {
@@ -89,14 +86,14 @@ main {
     padding-bottom: 24px;
 }
 
-.picture { /*kleine Fotos */
+.picture { /*small photos */
     width: 180px;
     height: 180px;
     object-fit: cover;
     border-radius: 20px;
-    display: flex; /* alt-Text Umbruch */
-    overflow-wrap: break-word; /* alt-Text Umbruch */
-    word-wrap: break-word; /* alt-Text Umbruch */
+    display: flex; /* alt-Text wrapping */
+    overflow-wrap: break-word; /* alt-Text wrapping */
+    word-wrap: break-word; /* alt-Text wrapping */
 }
 
 .picture:hover {
@@ -104,13 +101,13 @@ main {
     cursor: pointer;
 }
 
-footer {
+.footer {
     display: flex;
     background-color: var(--backgroundColorHeaderFooter);
     height: 100px;
     width: 100%;
     border-top: solid;
-    border-color: var(--borderColorHeaderFooter);
+    border-color: var(--borderColorHeaderFooter)
 }
 
 .footerRemark {
@@ -128,15 +125,15 @@ footer {
 
 /* Klassen für Overlay */
 
-.overlayClass {
+.overlayClass { /* position overlay */
     position: absolute;
-    top: 0;
+    top: 100px; /* - header */
     left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    min-height: calc(100vh - 200px); /*200px=100px Header und 100px Footer */
     background-color: var(--backgroundColorOverlay);
 }
 
@@ -158,8 +155,8 @@ footer {
     padding-right: 16px;
 }
 
-.pictureInOverlay { /*großes Foto */
-    max-width: 1000px;
+.pictureInOverlay { /*big photo */
+    max-width: 700px;
     width: 100%;
     max-height: auto;
     border-radius: 24px;
@@ -173,7 +170,7 @@ footer {
 }
 
 .navigate {
-    max-width: 1200px;
+    max-width: 700px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -192,8 +189,15 @@ footer {
     width: 58px;
 }
 
-/* ######################################################### */
-/* Diese Klassen werden nur in der Impressum Seite verwendet */
+.footerFixing {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+
+/* ####################################### */
+/* this classes are only used in Impressum */
 
 .contentWidthImpressum {
     box-sizing: border-box;

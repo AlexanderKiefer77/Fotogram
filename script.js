@@ -31,9 +31,10 @@ let commentsPictures = [
 
 let overlayRef = document.getElementById('overlay');
 let displayAOT = document.getElementById('aot');
+let displayFooter = document.getElementById('footer');
 
-function render() { // wird mit body onload gestartet, fügt die Überschrift hinzu und erstellt 
-                    // die kleinen Fotos in Verbindung mit der Funktion "pictureRendering"
+function render() { // starts with body onload, adds the heading and render 
+                    // the small photos with the function "pictureRendering"
     let pictureRef = document.getElementById('pictureField');
     pictureRef.innerHTML = `<div class="headline">
                                 <h1>Meine Fotos aus Bregenz 2025</h1>
@@ -43,16 +44,18 @@ function render() { // wird mit body onload gestartet, fügt die Überschrift hi
     }
 }
 
-function pictureRendering(index) { // erstellt die kleinen Bilder    //
+function pictureRendering(index) { // render small pictures  //
     return `<div>             
                 <img src="./assets/img/${pictures[index]}" alt="kleines Foto ${commentsPictures[index]}" onclick="openOverlay(${index})" class="picture">                                               
             </div>`
 }
 
-function openOverlay(index) { // erstellt den Inhalt des Overlay Bildes
+function openOverlay(index) { // render the Overlay picture
     overlayPictureRendering(index);
-    toggleOverlay(); // startet die toggle function
-    displayAOT.classList.add("d_none"); // fügt dem AOT die class d_none hinzu, damit wird der Inhalt des AOT ausgeblendet
+    toggleOverlay(); // starting toggle function
+    displayAOT.classList.add("d_none"); // add AOT the class d_none, This hides the contents of the AOT
+    
+    displayFooter.classList.add("footerFixing");
 }
 
 function overlayPictureRendering(index) {
@@ -75,13 +78,13 @@ function toggleOverlay() {
     overlayRef.classList.toggle('overlayClass');
 }
 
-function closeOverlay() { // function für Overlay zu schliessen
-    overlayRef.innerHTML = ''; // leert den Inhalt des Overlay
-    toggleOverlay(); // startet die toggle function
-    displayAOT.classList.remove("d_none"); // entfernt dem AOT wieder die class d_none, damit wird der Inhalt des AOT wieder eingeblendet
+function closeOverlay() { // function closing the Overlay
+    overlayRef.innerHTML = ''; // clears the contents of the overlay
+    toggleOverlay(); // starts toggle function
+    displayAOT.classList.remove("d_none"); // removed AOT class d_none, This will display the contents of the AOT again
 }
 
-function prevPicture(index) { // function für großes Bild zurück zu ändern
+function prevPicture(index) { // function big picturer backwards
     if (index > 0) {
         index = index - 1;
         overlayPictureRendering(index);
@@ -91,7 +94,7 @@ function prevPicture(index) { // function für großes Bild zurück zu ändern
     }
 }
 
-function nextPicture(index) { // function für großes Bild vorwärts zu ändern
+function nextPicture(index) { // function big picture forwards
     if (index < pictures.length - 1) {
         index = index + 1;
         overlayPictureRendering(index);
