@@ -52,7 +52,7 @@ body {
     padding-right: 24px;
 }
 
-.header {
+header {
     display: flex;
     width: 100%;
     height: 100px;
@@ -63,6 +63,28 @@ body {
 
 header img {
     height: 72px;
+}
+
+.innerHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fullscreenIcons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.fullscreenIcons img {
+    height: 32px;
+}
+
+.fullscreenIcons img:hover {
+    height: 40px;
 }
 
 .aot {
@@ -128,7 +150,7 @@ header img {
     color: darkred;
 }
 
-/* Klassen für Overlay */
+/* classes for Overlay */
 
 .overlayClass { /* position overlay */
     position: absolute;
@@ -146,6 +168,14 @@ header img {
     display: none;
 }
 
+/*.remarksBigPhoto {
+    width: 680px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}*/
+
 .innerOverlay {
     max-width: var(--maxWidth);
     width: 100%;
@@ -161,7 +191,7 @@ header img {
 }
 
 .pictureInOverlay { /*big photo */
-    max-width: 700px;
+    max-width: 980px; /* navigate width should be the same size */
     width: 100%;
     max-height: auto;
     border-radius: 24px;
@@ -175,7 +205,7 @@ header img {
 }
 
 .navigate {
-    max-width: 700px;
+    max-width: 980px; /* the same size as in pictureInOverlay */
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -186,12 +216,14 @@ header img {
 }
 
 .arrow {
-    width: 60px;
+    width: 32px;
+    height: 32px;
     cursor: pointer;
 }
 
 .arrow:hover {
-    width: 58px;
+    width: 30px;
+    height: 30px;
 }
 
 .footerFixing {

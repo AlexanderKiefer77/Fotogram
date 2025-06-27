@@ -53,14 +53,13 @@ function pictureRendering(index) { // render small pictures  //
 function openOverlay(index) { // render the Overlay picture
     overlayPictureRendering(index);
     toggleOverlay(); // starting toggle function
-    displayAOT.classList.add("d_none"); // add AOT the class d_none, This hides the contents of the AOT
-    
+    displayAOT.classList.add("d_none"); // add AOT the class d_none, This hides the contents of the AOT    
     displayFooter.classList.add("footerFixing");
 }
 
 function overlayPictureRendering(index) {
-    overlayRef.innerHTML = `<div class="innerOverlay">  
-                                <p>zum schliessen auf das Bild klicken</p>                             
+    overlayRef.innerHTML = `<div class="innerOverlay">
+                                <b>zum schliessen auf das Bild klicken</b>                        
                                 <figure>
                                     <img src="./img/${pictures[index]}" alt="Foto ${commentsPictures[index]}" onclick="closeOverlay()" class="pictureInOverlay">
                                     <div class="navigate">
@@ -72,6 +71,7 @@ function overlayPictureRendering(index) {
                                     </div>
                                 </figure>                                                            
                             </div>`;
+    openFullscreen();
 }
 
 function toggleOverlay() {
@@ -82,6 +82,7 @@ function closeOverlay() { // function closing the Overlay
     overlayRef.innerHTML = ''; // clears the contents of the overlay
     toggleOverlay(); // starts toggle function
     displayAOT.classList.remove("d_none"); // removed AOT class d_none, This will display the contents of the AOT again
+    closeFullscreen();
 }
 
 function prevPicture(index) { // function big picturer backwards
@@ -103,3 +104,17 @@ function nextPicture(index) { // function big picture forwards
         overlayPictureRendering(index);
     }
 }
+
+let elem = document.documentElement;
+
+    function openFullscreen() {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        }
+    }
+
+    function closeFullscreen() {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }

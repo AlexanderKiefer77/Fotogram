@@ -11,15 +11,21 @@
 
 <body onload="render()"> 
     
-    <header class="header">
+    <header>
         <div class="contentWidth">
-            <img src="./assets/Fotogram_Logo.svg" alt="Fotogram Logo">
+            <div class="innerHeader">
+                <img src="./assets/Fotogram_Logo.svg" alt="Fotogram Logo">
+                <div class="fullscreenIcons">
+                    <!--<img src="./assets/openFullscreen.svg" alt="Icon für Fullscreen zu öffnen" onclick="openFullscreen()">-->
+                    <!--<img src="./assets/closeFullscreen.svg" alt="Icon für Fullscreen zu schliessen" onclick="closeFullscreen()">-->
+                </div>
+            </div>
         </div>
     </header>
 
   <div id="overlay"></div>
     <main id="aot" class="aot">       
-        <div class="contentWidth"> <!-- nur für content breite -->
+        <div class="contentWidth"> <!-- only for content width -->
             <div id="pictureField" class="pictureplace"></div>            
         </div>       
     </main>
